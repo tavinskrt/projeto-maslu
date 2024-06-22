@@ -1,0 +1,195 @@
+* {
+    margin: auto;
+}
+
+
+/* Imagens de fundo das sections */
+:root {
+    --produto1: url(../images/produto1.jpg);
+    --produto2: url(../images/produto2.jpg);
+    --produto3: url(../images/produto3.jpg);
+    --produto4: url(../images/produto4.jpg);
+    --produto5: url(../images/produto5.jpg);
+}
+
+/* Importando a fonte */
+@font-face {
+    font-family: Inconsolata;
+    src: url(../fonts/Inconsolata-VariableFont_wdth\,wght.ttf);
+}
+
+/* Definindo o tamanho mínimo e máximo do site e fazendo ajustes na responsividade */
+html, body {
+    min-width: 5%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Configurando o header */
+header {
+    height: 100px;
+    box-shadow: 1px 1px 3px 1px black;
+    text-align: center;
+    padding: 30px 30px 10px 10px;
+}
+
+/* Configurações da barra nav e seus elementos-filho*/
+nav {
+    font-family: Inconsolata, Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+nav > a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+}
+
+nav > a:hover {
+    background-color: black;
+    color: white;
+    transition: .8s ease;
+}
+
+main {
+    font-family: Inconsolata, Arial, Helvetica, sans-serif;
+}
+
+/* Definindo o texto */
+main > h1 {
+    padding-top: 16px;
+    padding-left: 16px;
+}
+
+/* Definindo o posicionamento do artigo para flex, para que ele faça as divs se alinharem */
+article {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Evitando rolagem lateral */
+    flex-wrap: wrap;
+}
+
+/* Configurando as divs e seus elementos-filho */
+div {
+    display: block;
+    padding: 10px;
+    border: 1px solid black;
+    width: 200px;
+    margin: 16px;
+    /* Um espaço entre as divs, evitando a quebra de linha */
+    justify-content: space-between;
+}
+
+div > a {
+    text-decoration: none;
+    color: black;
+}
+
+div > a > section > h2 {
+    border-radius: 1px 1px 0px 0px;
+    padding: 2px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 8px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 350;
+}
+
+div > aside > a {
+    text-decoration: none;
+    color: black;
+}
+
+div > aside > a:hover {
+    text-decoration: underline;
+}
+
+/* Configurando cada seção */
+section {
+    height: 200px;
+    background-size: cover;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+/* Definindo o conteúdo do hover de produto esgotado */
+.soldout > a > section > h2::before {
+    content: 'esgotado!';
+}
+
+/* Definindo a mensagem que aparecerá quando o produto estiver em promoção */
+.promo > a > section > h2::before {
+    content: 'queima de estoque';
+}
+
+/* Definindo a mensagem que aparecerá quando o produto for novo */
+.novo > a > section > h2::before {
+    content: 'novo';
+}
+
+/* Definindo a mensagem que aparecerá quando o produto for re-estocado */
+.restock > a > section > h2::before {
+    content: 'restock';
+}
+
+/* Definindo a imagem de fundo de cada section */
+.prod1 {
+    background-image: var(--produto1);
+}
+
+.prod2 {
+    background-image: var(--produto2);
+}
+
+.prod3 {
+    background-image: var(--produto3);
+}
+
+.prod4 {
+    background-image: var(--produto4);
+}
+
+.prod5 {
+    background-image: var(--produto5);
+}
+
+/* Configurações específicas da seção soldout */
+.soldout > a > section > h2 {
+    font-family: Inconsolata;
+    text-decoration: none;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    text-align: center;
+    opacity: 0;
+    color: black;
+}
+
+/* Fazendo uma leve animação no hover da seção soldout */
+.soldout > a:hover > section > h2 {
+    transition: .5s ease;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.527);
+}
+
+/* Configurando a cor de fundo de cada h2 das seções especiais */
+.novo > a > section > h2 {
+    background-color: rgb(255, 0, 191);
+}
+
+.restock > a > section > h2 {
+    background-color: rgb(255, 0, 140);
+}
+
+.promo > a > section > h2 {
+    background-color: rgb(183, 0, 255);
+}
+
+/* Configurando o rodapé */
+footer {
+    text-align: center;
+    padding: 30px 30px 30px 30px;
+}
